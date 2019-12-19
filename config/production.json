@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://vartika23:vartika23@devconnectors-hevwz.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mySecretToken",
+    "githubClientId": "5e7367dddc2494515077",
+    "githubSecret": "930ee9bc1334082de81e915c1f4de0010ffcc310"
+}
