@@ -15,6 +15,7 @@ import setAuthToken from '../utils/setAuthToken';
 // Load User
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
+    alert("local Storage")
     setAuthToken(localStorage.token);
   }
 

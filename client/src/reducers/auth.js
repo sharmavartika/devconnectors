@@ -21,6 +21,7 @@ export default function(state = initialState, action) {
 
   switch (type) {
     case USER_LOADED:
+      alert('USER_LOADED')
       return {
         ...state,
         isAuthenticated: true,
@@ -30,6 +31,7 @@ export default function(state = initialState, action) {
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem('token', payload.token);
+      alert('LOGIN_SUCCESS')
       return {
         ...state,
         ...payload,
@@ -42,6 +44,7 @@ export default function(state = initialState, action) {
     case LOGOUT:
     case ACCOUNT_DELETED:
       localStorage.removeItem('token');
+      alert('AUTH_ERROR')
       return {
         ...state,
         token: null,
@@ -49,6 +52,7 @@ export default function(state = initialState, action) {
         loading: false
       };
     default:
+      alert('default')
       return state;
   }
 }
