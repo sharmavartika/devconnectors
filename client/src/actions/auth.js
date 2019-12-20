@@ -16,6 +16,7 @@ import setAuthToken from '../utils/setAuthToken';
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
     alert("local Storage")
+    alert(localStorage.token)
     setAuthToken(localStorage.token);
   }
 
@@ -66,7 +67,7 @@ export const register = ({ name, email, password }) => async dispatch => {
 };
 
 // Login User
-export const login = ({email, password}) => async dispatch => {
+export const login = (email, password) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json'

@@ -13,6 +13,7 @@ const User = require('../../models/User');
 // @access   Public
 router.get('/', auth, async (req, res) => {
   try {
+    alert(req.user.id)
     const user = await User.findById(req.user.id).select('-password');
     res.json(user);
   } catch (err) {
