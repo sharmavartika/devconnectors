@@ -53,6 +53,7 @@ export default function(state = initialState, action) {
       };
     default:
       alert('default')
+      console.log(state)
       return state;
   }
 }

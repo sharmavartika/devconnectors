@@ -22,15 +22,15 @@ export const loadUser = () => async dispatch => {
 
   try {
     const res = await axios.get('/api/auth');
-
+    console.log(res.data)
     dispatch({
       type: USER_LOADED,
       payload: res.data
     });
   } catch (err) {
-    dispatch({
-      type: AUTH_ERROR
-    });
+      dispatch({
+        type: AUTH_ERROR
+      });
   }
 };
 
@@ -67,7 +67,7 @@ export const register = ({ name, email, password }) => async dispatch => {
 };
 
 // Login User
-export const login = (email, password) => async dispatch => {
+export const login = ({email, password}) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json'
@@ -78,7 +78,8 @@ export const login = (email, password) => async dispatch => {
 
   try {
     const res = await axios.post('/api/auth', body, config);
-
+  
+    console.log(res.data);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
