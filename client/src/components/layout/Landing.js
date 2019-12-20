@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
  
 
 const Landing = ({ isAuthenticated }) => {
-    console.log(isAuthenticated)
     if(isAuthenticated){
         return <Redirect to='/dashboard' />
     }
